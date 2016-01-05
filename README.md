@@ -13,5 +13,5 @@ docker run -e AWS_ACCESS_KEY_ID=$aws_access_key -e AWS_SECRET_KEY=$aws_secret_ke
 or: 
 
 ```
-docker run -i -t --rm -v mycredentialsfile:/root/.aws/credentials -p 7777:7777 forest2087/docker-dynamodb -inMemory -sharedDb -port 7777
+docker run -i -t -p 7777:7777 forest2087/docker-dynamodb 
 ```
