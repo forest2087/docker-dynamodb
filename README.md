@@ -7,5 +7,5 @@ docker run -i -t forest2087/docker-dynamodb
 Example:
 
 ```
-docker run -i -t -p 7777:7777 forest2087/docker-dynamodb -inMemory -sharedDb -port 7777
+docker run -e AWS_ACCESS_KEY_ID=$aws_access_key -e AWS_SECRET_KEY=$aws_secret_key -i -t -p 7777:7777 forest2087/docker-dynamodb -inMemory -sharedDb -port 7777
 ```
