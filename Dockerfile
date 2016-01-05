@@ -12,9 +12,9 @@ RUN /usr/bin/curl -L http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dy
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME ["/var/dynamodb_local", "/var/dynamodb_wd"]
 
-#RUN apt-get update
+RUN apt-get update
 
-RUN apt-get install -y git-core python-pip build-essential python-dev wget -y
+RUN apt-get install -y python-pip python-dev
 RUN pip install boto
 RUN pip install boto3
 
