@@ -26,4 +26,4 @@ RUN curl -L https://github.com/forest2087/docker-dynalite/raw/master/dynamodump.
 
 ADD Build/start.sh   /sbin/start.sh
 RUN chmod +x /sbin/start.sh
-ENTRYPOINT ["/sbin/start.sh"]
+CMD ["/sbin/start.sh"]
