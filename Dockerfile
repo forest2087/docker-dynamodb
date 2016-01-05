@@ -14,13 +14,17 @@ ENTRYPOINT ["/opt/jdk/bin/java", "-Djava.library.path=.", "-jar", "DynamoDBLocal
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME ["/var/dynamodb_local", "/var/dynamodb_wd"]
 
+RUN apt-get update
+
+RUN apt-get install -y git-core python-pip build-essential python-dev wget -y
+RUN pip install boto
+RUN pip install boto3
+
 RUN mkdir /var/dynamodump
 
 WORKDIR /var/dynamodump
 
-RUN /usr/bin/wget https://raw.githubusercontent.com/bchew/dynamodump/master/dynamodump.py
+RUN /usr/bin/wget http://raw.githubusercontent.com/bchew/dynamodump/master/dynamodump.py
 
-RUN sudo apt-get install python-pip
-
-RUN sudo pip install boto3
+RUN /usr/bin/python dynamodump.py -m backup -r us-east-1 -s itsqa-emp-director-client-5cfaceac027443a08c4251a65d184ea8 
 
