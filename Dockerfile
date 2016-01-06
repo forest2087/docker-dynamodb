@@ -22,7 +22,7 @@ RUN mkdir /var/dynamodump
 
 WORKDIR /var/dynamodump
 
-ADD Build/dynamodump.tar /var/dynamodump
+ADD Build/dump.tar /var/dynamodump
 
 ADD Build/start.sh   /sbin/start.sh
 RUN chmod +x /sbin/start.sh
