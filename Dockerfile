@@ -22,7 +22,7 @@ RUN mkdir /var/dynamodump
 
 WORKDIR /var/dynamodump
 
-RUN curl -L https://github.com/forest2087/docker-dynalite/raw/master/dynamodump.tar.gz | tar xz
+ADD Build/dynamodump.tar /var/dynamodump
 
 ADD Build/start.sh   /sbin/start.sh
 RUN chmod +x /sbin/start.sh
