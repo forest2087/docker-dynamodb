@@ -2,7 +2,7 @@
 
 cd /var/dynamodb_wd
 
-/opt/jdk/bin/java -Djava.library.path=. -jar DynamoDBLocal.jar -inMemory -sharedDb -port 7777 &
+/opt/jdk/bin/java -Djava.library.path=. -jar DynamoDBLocal.jar -inMemory -sharedDb -delayTransientStatuses -port 7777 &
 
 cd /var/dynamodump/dynamodump
 
