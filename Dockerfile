@@ -24,6 +24,8 @@ WORKDIR /var/dynamodump
 
 ADD Build/dump.tar /var/dynamodump
 
+COPY /Users/forest/.aws ~/.aws
+
 ADD Build/start.sh   /sbin/start.sh
 RUN chmod +x /sbin/start.sh
 CMD ["/sbin/start.sh"]
